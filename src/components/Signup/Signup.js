@@ -7,7 +7,7 @@ import app from '../../firebase/firebase.init';
 const auth = getAuth(app)
 const Signup = () => {
 
-    const { createUser, googleSign } = useContext(AuthContext)
+    const { createUser, googleSign, githubSign } = useContext(AuthContext)
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -49,6 +49,16 @@ const Signup = () => {
 
     }
 
+    const signWithGitHub = () => {
+        githubSign()
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+            }).catch((error) => {
+                console.log(error);
+            });
+    }
+
     return (
         <div className='container sign-account'>
             <form action="" className='sign' onSubmit={handleSubmit}>
@@ -70,7 +80,7 @@ const Signup = () => {
             <div className="other-options">
                 <p className='or-title'>Or Signup With</p>
                 <button type='button' onClick={signWithGoogle}>Signup With Google</button>
-                <button type='button'>Signup With Github</button>
+                <button type='button' onClick={signWithGitHub}>Signup With Github</button>
             </div>
         </div>
     );

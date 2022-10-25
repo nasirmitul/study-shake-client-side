@@ -36,16 +36,24 @@ const Navigation = () => {
                             dark ? <img src={sun} alt="" /> : <img src={moon} alt="" />
                         }
                     </div>
-                    <div className="profile">
-                        <Link className='user-profile' to='/signup'>
-                            <img onMouseEnter={() => setShowName(true)} onMouseLeave={() => setShowName(false)} src={user?.photoURL} alt="" />
-                            <div className={`user-name ${showName ? 'show-name' : 'hide-name'}`}>
-                                {
-                                    showName ? user?.displayName : ''
-                                }
-                            </div>
-                        </Link>
+
+
+                    <div className="log-profile">
+                        {
+                            !user ? <button type='button'> <Link to='/login'>Login</Link> </button> :
+                                <div className="profile">
+                                    <Link className='user-profile' to='/profile'>
+                                        <img onMouseEnter={() => setShowName(true)} onMouseLeave={() => setShowName(false)} src={user?.photoURL} alt="" />
+                                        <div className={`user-name ${showName ? 'show-name' : 'hide-name'}`}>
+                                            {
+                                                showName ? user?.displayName : ''
+                                            }
+                                        </div>
+                                    </Link>
+                                </div>
+                        }
                     </div>
+
                 </div>
             </nav>
         </div>

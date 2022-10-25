@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 
 const Signin = () => {
-    const { loginUser } = useContext(AuthContext)
+    const { loginUser, googleSign, githubSign } = useContext(AuthContext)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,6 +25,27 @@ const Signin = () => {
             })
     }
 
+
+    const signWithGoogle = () => {
+        googleSign()
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+            }).catch((error) => {
+                console.log(error);
+            });
+
+    }
+
+    const signWithGitHub = () => {
+        githubSign()
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+            }).catch((error) => {
+                console.log(error);
+            });
+    }
 
     return (
         <div className='container sign-account'>
@@ -53,8 +74,8 @@ const Signin = () => {
 
             <div className="other-options">
                 <p className='or-title'>Or Login With</p>
-                <button type='button'>Login With Google</button>
-                <button type='button'>Login With Github</button>
+                <button type='button' onClick={signWithGoogle}>Signup With Google</button>
+                <button type='button' onClick={signWithGitHub}>Signup With Github</button>
             </div>
         </div>
     );
