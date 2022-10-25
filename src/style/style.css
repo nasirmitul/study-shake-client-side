@@ -31,7 +31,7 @@ body{
 
 /* ============ Top Navigation Design ============ */
 .navigation {
-    background: var(--text-light);
+    background:var(--background-light);
     padding: 10px 20px;
     position: relative;
     border-bottom: 1px solid rgba(168, 169, 219, 0.1);
