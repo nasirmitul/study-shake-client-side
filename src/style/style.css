@@ -1,5 +1,6 @@
 :root {
     --primary: #FC7583;
+    --primary-700: #e25967;
     --shadow: #CBD2E6;
     --shadow-dark: #A8A9DB;
     --background-light: #EFF7FF;
@@ -7,6 +8,9 @@
     --background-dark-500: #3C3B56;
     --text-dark: #2e2f3a;
     --text-light: #EFF7FF;
+    --gray-light: #d3cece;
+    --dark-100: rgba(0, 0, 0, 0.2);
+    --button: linear-gradient(0deg, #FC7583, #e25967);
 }
 
 * {
@@ -103,8 +107,8 @@ body {
 }
 
 .top-navigation .right-panel .profile img {
-    width: 45px;
-    height: 45px;
+    width: 37px;
+    height: 37px;
     object-fit: cover;
     border-radius: 50%;
     cursor: pointer;
@@ -113,7 +117,6 @@ body {
 
 .top-navigation .right-panel .profile .user-profile {
     position: relative;
-    width: 200px !important;
 }
 
 .top-navigation .right-panel .profile .user-profile .user-name {
@@ -148,5 +151,180 @@ body {
     border-color: transparent transparent #dae1e9 transparent;
 }
 
+.top-navigation .right-panel .navigation-login{
+    padding: 8px 20px;
+    background: var(--button);
+    cursor: pointer;
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+}
 
-/* ============ Top Navigation Design ============ */
+
+/* ============ Signup, Login, Forget Pass ============ */
+.sign-account {
+    margin-top: 50px;
+    width: min(400px, 90%);
+}
+
+.sign-account .heading {
+    color: var(--background-dark-500);
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.sign-account .heading span {
+    color: var(--primary);
+    font-size: 3rem;
+}
+
+.sign-account .change-to {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-dark);
+}
+
+.sign-account .change-to a {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.sign-account .inputs {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    
+    gap: 15px;
+}
+
+.sign-account .inputs input {
+    padding: 10px 15px;
+    background: transparent;
+    border: 1px solid var(--dark-100);
+    border-radius: 5px;
+    outline: none;
+    font-size: .9rem;
+    transition: .5s;
+    color: var(--text-dark);
+}
+
+.sign-account .inputs input:focus {
+    border: 1px solid var(--primary);
+}
+
+.sign-account .action-button .sign-to-account{
+    margin-top: 30px;
+    padding: 8px;
+    background: var(--button);
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: var(--text-light);
+    font-size: 1rem;
+    cursor: pointer;
+    border: 2px solid var(--primary);
+    transition: .5s;
+}
+
+.sign-account .action-button .sign-to-account:hover{
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary-700);
+    font-weight: 600;
+}
+
+.sign-account .other-options .or-title{
+    position: relative;
+    
+    text-align: center;
+    margin: 20px 0;
+    color: var(--gray-light);
+    font-size: .9rem;
+    font-weight: 400;
+}
+
+.sign-account .other-options .or-title::before,
+.sign-account .other-options .or-title::after{
+    content: '';
+    position: absolute;
+    height: .5px;
+    width: 35%;
+    background: var(--dark-100);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sign-account .other-options .or-title::before{
+    left: 0;
+}
+
+.sign-account .other-options .or-title::after{
+    right: 0;
+}
+
+.sign-account .other-options .google-github{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+
+
+.sign-account .other-options .google-github .google-sign,
+.sign-account .other-options .google-github .github-sign{
+    padding: 8px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: var(--primary-700);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 2px solid var(--primary);
+    transition: .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.sign-account .other-options .google-github .google-sign:hover,
+.sign-account .other-options .google-github .github-sign:hover{
+    background: var(--button);
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.sign-account .other-options .google-github .google-sign img,
+.sign-account .other-options .google-github .github-sign img{
+    width: 20px;
+}
+
+.remember-forget{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    
+}
+
+.remember-forget .remember-me{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.remember-forget .remember-me input{
+    accent-color: var(--primary-700);
+}
+
+.remember-forget .forget-password{
+    color: var(--primary);
+    font-weight: 500;
+}

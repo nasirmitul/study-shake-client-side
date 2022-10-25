@@ -14,7 +14,7 @@ const ForgetPass = () => {
 
 
                 <div className="action-button">
-                    <button type='submit'>Login</button>
+                    <button className='sign-to-account' type='submit'>Forget Password</button>
                 </div>
             </form>
 

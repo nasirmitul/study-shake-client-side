@@ -60,22 +60,25 @@ const Signin = () => {
 
                 <div className="remember-forget">
                     <div className="remember-me">
-                        <input type="checkbox" />
-                        <p>Remember Me</p>
+                        <input id='remember' name='remember' value='remember' type="checkbox" />
+                        <label htmlFor='remember'>Remember Me</label>
                     </div>
 
-                    <Link to='/forget'>Forget Password?</Link>
+                    <Link className='forget-password' to='/forget'>Forget Password?</Link>
                 </div>
 
                 <div className="action-button">
-                    <button type='submit'>Login</button>
+                    <button className='sign-to-account' type='submit'>Login</button>
                 </div>
             </form>
 
             <div className="other-options">
-                <p className='or-title'>Or Login With</p>
-                <button type='button' onClick={signWithGoogle}>Signup With Google</button>
-                <button type='button' onClick={signWithGitHub}>Signup With Github</button>
+                <p className='or-title'>Or Signup With</p>
+
+                <div className="google-github">
+                    <button type='button' className='google-sign' onClick={signWithGoogle}>Signup With Google</button>
+                    <button type='button' className='github-sign' onClick={signWithGitHub}>Signup With Github</button>
+                </div>
             </div>
         </div>
     );

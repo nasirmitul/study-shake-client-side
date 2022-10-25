@@ -40,7 +40,7 @@ const Navigation = () => {
 
                     <div className="log-profile">
                         {
-                            !user ? <button type='button'> <Link to='/login'>Login</Link> </button> :
+                            !user ? <Link to='/login'><button className='navigation-login' type='button'> Login</button></Link> :
                                 <div className="profile">
                                     <Link className='user-profile' to='/profile'>
                                         <img onMouseEnter={() => setShowName(true)} onMouseLeave={() => setShowName(false)} src={user?.photoURL} alt="" />

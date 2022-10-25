@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 import app from '../../firebase/firebase.init';
 
+import google from '../../images/google.png'
+import github from '../../images/github.png'
+
 const auth = getAuth(app)
 const Signup = () => {
 
@@ -62,7 +65,7 @@ const Signup = () => {
     return (
         <div className='container sign-account'>
             <form action="" className='sign' onSubmit={handleSubmit}>
-                <h2 className='heading'>Register</h2>
+                <h2 className='heading'>Create new account<span>.</span></h2>
                 <p className='change-to'>Have an account? <Link to='/login'>Login</Link> </p>
 
                 <div className="inputs">
@@ -73,14 +76,27 @@ const Signup = () => {
                 </div>
 
                 <div className="action-button">
-                    <button type='submit'>Signup</button>
+                    <button className='sign-to-account' type='submit'>Signup</button>
                 </div>
             </form>
 
             <div className="other-options">
                 <p className='or-title'>Or Signup With</p>
-                <button type='button' onClick={signWithGoogle}>Signup With Google</button>
-                <button type='button' onClick={signWithGitHub}>Signup With Github</button>
+
+                <div className="google-github">
+                    <div className="google-sign-button">
+
+                    </div>
+                    <button type='button' className='google-sign' onClick={signWithGoogle}>
+                        <img src={google} alt="" />
+                        Signup With Google
+                    </button>
+                    <button type='button' className='github-sign' onClick={signWithGitHub}>
+                        <img src={github} alt="" />
+                        Signup With Github
+                    </button>
+                </div>
+
             </div>
         </div>
     );
