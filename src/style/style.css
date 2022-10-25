@@ -16,7 +16,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.container{
+.container {
     width: min(1320px, 90%);
     margin: auto;
 }
@@ -25,19 +25,19 @@ a {
     text-decoration: none;
 }
 
-body{
+body {
     background: var(--background-light);
 }
 
 /* ============ Top Navigation Design ============ */
 .navigation {
-    background:var(--background-light);
+    background: var(--background-light);
     padding: 10px 20px;
     position: relative;
     border-bottom: 1px solid rgba(168, 169, 219, 0.1);
 }
 
-.navigation::before{
+.navigation::before {
     content: '';
     position: absolute;
     left: 35px;
@@ -83,7 +83,7 @@ body{
     font-weight: 500;
 }
 
-.top-navigation .links a{
+.top-navigation .links a {
     color: var(--text-dark);
 }
 
@@ -108,4 +108,42 @@ body{
     object-fit: cover;
     border-radius: 50%;
     cursor: pointer;
+    position: relative;
+}
+
+.top-navigation .right-panel .profile .user-profile {
+    position: relative;
+    width: 200px !important;
+}
+
+.top-navigation .right-panel .profile .user-profile .user-name {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--background-light);
+    color: var(--text-dark);
+    box-shadow: 0px 0px 8px 4px rgba(168, 169, 219, 0.2);
+    white-space: nowrap;
+    text-align: center;
+    border-radius: 5px;
+    padding: 8px 15px;
+    top: 30px;
+}
+
+.top-navigation .right-panel .profile .user-profile .user-name.show-name {
+    display: block;
+}
+
+.top-navigation .right-panel .profile .user-profile .user-name.hide-name {
+    display: none;
+}
+
+.top-navigation .right-panel .profile .user-profile .user-name::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 10px solid;
+    border-color: transparent transparent #dae1e9 transparent;
 }

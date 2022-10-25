@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../images/logo.png'
 import man from '../../images/man.jpg'
 
 import sun from '../../images/sun.png'
 import moon from '../../images/moon.png'
+import { AuthContext } from '../../contexts/UserContext';
 
 
 const Navigation = () => {
     const [dark, setDark] = useState(false);
+    const [showName, setShowName] = useState(false);
+
+    const { user } = useContext(AuthContext)
 
     return (
         <div className='navigation'>
@@ -33,10 +37,14 @@ const Navigation = () => {
                         }
                     </div>
                     <div className="profile">
-                        <Link to='/signup'>
-                            <img src={man} alt="" />
+                        <Link className='user-profile' to='/signup'>
+                            <img onMouseEnter={() => setShowName(true)} onMouseLeave={() => setShowName(false)} src={user?.photoURL} alt="" />
+                            <div className={`user-name ${showName ? 'show-name' : 'hide-name'}`}>
+                                {
+                                    showName ? user?.displayName : ''
+                                }
+                            </div>
                         </Link>
-                        
                     </div>
                 </div>
             </nav>
