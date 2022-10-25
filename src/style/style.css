@@ -1,0 +1,111 @@
+:root {
+    --primary: #FC7583;
+    --shadow: #CBD2E6;
+    --shadow-dark: #A8A9DB;
+    --background-light: #EFF7FF;
+    --background-dark-700: #2e2f3a;
+    --background-dark-500: #3C3B56;
+    --text-dark: #2e2f3a;
+    --text-light: #EFF7FF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    width: min(1320px, 90%);
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+body{
+    background: var(--background-light);
+}
+
+/* ============ Top Navigation Design ============ */
+.navigation {
+    background: var(--text-light);
+    padding: 10px 20px;
+    position: relative;
+    border-bottom: 1px solid rgba(168, 169, 219, 0.1);
+}
+
+.navigation::before{
+    content: '';
+    position: absolute;
+    left: 35px;
+    top: 0;
+    width: calc(100% - 70px);
+    margin: auto;
+    /* background: red; */
+    z-index: -1;
+    height: 100%;
+    box-shadow: 0px 0px 10px 8px rgba(168, 169, 219, 0.4);
+}
+
+.top-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: min(1320px, 90%);
+    margin: auto;
+}
+
+.top-navigation .logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-navigation .logo img {
+    width: 30px;
+    height: auto;
+}
+
+.top-navigation .logo p {
+    color: var(--primary);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.top-navigation .links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.top-navigation .links a{
+    color: var(--text-dark);
+}
+
+.top-navigation .links a.active {
+    color: var(--primary);
+}
+
+.top-navigation .right-panel {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.top-navigation .right-panel .theme-change img {
+    width: 25px;
+    cursor: pointer;
+}
+
+.top-navigation .right-panel .profile img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
