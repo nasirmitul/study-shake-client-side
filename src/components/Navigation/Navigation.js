@@ -25,6 +25,7 @@ const Navigation = () => {
                 </div>
 
                 <div className="links">
+                    <NavLink to='/home'>Home</NavLink>
                     <NavLink to='/courses'>Courses</NavLink>
                     <NavLink to='/faq'>FAQ</NavLink>
                     <NavLink to='/blog'>blog</NavLink>

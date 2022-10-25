@@ -3,6 +3,7 @@ import Blog from "../components/Blogs/Blog";
 import Courses from "../components/Courses/Courses";
 import FAQ from "../components/FAQ/FAQ";
 import ForgetPass from "../components/Forget/ForgetPass";
+import Home from "../components/Home/Home";
 import Profile from "../components/Profile/Profile";
 import Signin from "../components/Signin/Signin";
 import Signup from "../components/Signup/Signup";
@@ -15,11 +16,24 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Courses></Courses>
+                element: <Home></Home>,
+                loader: async () => {
+                    return fetch('http://localhost:5000/courses')
+                }
+            },
+            {
+                path: '/home',
+                element: <Home></Home>,
+                loader: async () => {
+                    return fetch('http://localhost:5000/courses')
+                }
             },
             {
                 path: '/courses',
-                element: <Courses></Courses>
+                element: <Courses></Courses>,
+                loader: async () => {
+                    return fetch('http://localhost:5000/courses')
+                }
             },
             {
                 path: '/faq',
