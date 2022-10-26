@@ -478,10 +478,10 @@ body {
 
 
 /* ============ Course Details Page ============ */
-.course-detail {
+/* .course-detail {
     width: min(900px, 90%);
     margin: auto;
-}
+} */
 
 .course-detail .header {
     background: var(--primary-50);
@@ -704,7 +704,105 @@ body {
     transform: translateX(-50%);
 }
 
+/* ============ Course Page Side Navigation ============ */
+.course-layout{
+    display: flex;
+    gap: 50px;
+}
 
+.course-navigation{
+    position: sticky;
+    top: 10px;
+    min-width: 250px;
+    background: var(--primary-50);
+    padding: 20px;
+    border: 2px solid var(--white);
+    height: fit-content;
+}
+
+.course-navigations{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.course-navigations .course-title{
+    background: var(--white-50);
+    padding: 8px 12px;
+    border-radius: 3px;
+    border: 2px solid var(--white);
+    color: var(--primary);
+    font-weight: 500;
+}
+
+
+
+/* ============ Checkout ============ */
+.checkout {
+    width: min(550px, 90%);
+    margin: auto;
+}
+
+.checkout .checkout-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.checkout .checkout-title .title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.checkout .checkout-title .price {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text-dark-100);
+}
+
+.checkout .thumbnail img {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.checkout form .name,
+.checkout form .email,
+.checkout form .address {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.checkout form label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-dark-100);
+    margin-bottom: 3px;
+}
+
+.checkout form input {
+    padding: 15px 20px;
+    font-size: .9rem;
+    background: transparent;
+    border-radius: 5px;
+    border: 2px solid var(--text-gary);
+    outline: none;
+}
+
+.checkout form .name-input,
+.checkout form .email-input {
+    color: var(--text-gary);
+}
+
+.checkout form input:focus {
+    border: 2px solid var(--primary);
+}
+
+.checkout .my-button {
+    margin-top: 30px;
+}
 
 
 /* ============ Error ============ */
@@ -729,14 +827,14 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-.error h3{
+.error h3 {
     font-size: 1.3rem;
     font-weight: 500;
     color: var(--text-dark);
     margin-bottom: 10px;
 }
 
-.error p{
+.error p {
     font-size: .9rem;
     color: var(--text-dark-100);
     margin-bottom: 50px;

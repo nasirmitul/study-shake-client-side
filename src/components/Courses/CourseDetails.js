@@ -18,10 +18,12 @@ import {
 
 const CourseDetails = () => {
     const courseData = useLoaderData();
+    console.log(courseData);
+    
     const { course_id, title, short_description, about, thumbnail, authorImage, authorName, skills, student, rating, reviews, courseType, courseDuration, prerequisites, syllabus
     } = courseData || {};
     return (
-        <div className='container course-detail'>
+        <div className='course-detail'>
             <div className="header">
                 <div className="title-section">
                     <h3 className='course-title'>Learn {title}</h3>

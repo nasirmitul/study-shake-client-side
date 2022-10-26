@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../components/Blogs/Blog";
 import Checkout from "../components/Checkout/Checkout";
-import Course from "../components/Courses/Course";
 import CourseDetails from "../components/Courses/CourseDetails";
 import Courses from "../components/Courses/Courses";
 import ErrorPage from "../components/Error/ErrorPage";
@@ -11,6 +10,7 @@ import Home from "../components/Home/Home";
 import Profile from "../components/Profile/Profile";
 import Signin from "../components/Signin/Signin";
 import Signup from "../components/Signup/Signup";
+import CoursesLayout from "../layout/CoursesLayout";
 import Main from "../layout/Main";
 import PrivateRoute from "./PrivateRoute";
 
@@ -36,24 +36,30 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/courses',
-                element: <Courses></Courses>,
-                loader: async () => {
-                    return fetch('http://localhost:5000/courses')
-                }
-            },
-            {
-                path: '/courses/course/:course_id',
-                element: <CourseDetails></CourseDetails>,
-                loader: async ({params}) => {
-                    return fetch(`http://localhost:5000/courses/course/${params.course_id}`)
-                }
-            },
-            {
-                path: '/courses/course/checkout/:checkout_id',
-                element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
-                loader: async ({params}) => {
-                    return fetch(`http://localhost:5000/courses/course/checkout/${params.checkout_id}`)
-                }
+                element: <CoursesLayout></CoursesLayout>,
+                children: [
+                    {
+                        path: '/courses',
+                        element: <Courses></Courses>,
+                        loader: async () => {
+                            return fetch('http://localhost:5000/courses')
+                        }
+                    },
+                    {
+                        path: '/courses/course/:course_id',
+                        element: <CourseDetails></CourseDetails>,
+                        loader: async ({ params }) => {
+                            return fetch(`http://localhost:5000/courses/course/${params.course_id}`)
+                        }
+                    },
+                    {
+                        path: '/courses/course/checkout/:checkout_id',
+                        element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
+                        loader: async ({ params }) => {
+                            return fetch(`http://localhost:5000/courses/course/checkout/${params.checkout_id}`)
+                        }
+                    }
+                ]
             },
             {
                 path: '/faq',
