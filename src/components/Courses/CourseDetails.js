@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import avatars from '../../images/face-avatars.png'
 import star from '../../images/star.png'
 import level from '../../images/diagram.png'
@@ -15,9 +15,6 @@ import {
     AccordionItemPanel,
 } from 'react-accessible-accordion';
 
-// import 'react-accessible-accordion/dist/fancy-example.css';
-
-const ref = React.createRef();
 
 const CourseDetails = () => {
     const courseData = useLoaderData();
@@ -28,6 +25,7 @@ const CourseDetails = () => {
             <div className="header">
                 <div className="title-section">
                     <h3 className='course-title'>Learn {title}</h3>
+
                     <button className='to-pdf my-button'>Download as PDF</button>
                 </div>
                 <div className="short-description">
@@ -46,7 +44,10 @@ const CourseDetails = () => {
                     </div>
                 </div>
                 <div className="action-enroll">
-                    <button className="get-access my-button">Get Premium Access</button>
+                    <Link to={`/courses/course/checkout/${course_id}`}>
+                        <button className="get-access my-button">Get Premium Access</button>
+                    </Link>
+                    
                     <div className="enrolled">
                         <img src={avatars} alt="" />
                         <p><span>{student}</span> learners enrolled</p>
@@ -121,8 +122,10 @@ const CourseDetails = () => {
                     ))}
                 </Accordion>
             </div>
-
-            <button className="get-access-bottom my-button">Get Premium Access</button>
+            <Link to={`/courses/course/checkout/${course_id}`}>
+                <button className="get-access-bottom my-button">Get Premium Access</button>
+            </Link>
+            
         </div >
     );
 };

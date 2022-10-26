@@ -1,6 +1,6 @@
 import { getAuth, updateProfile } from 'firebase/auth';
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 import app from '../../firebase/firebase.init';
 
@@ -11,6 +11,14 @@ const auth = getAuth(app)
 const Signup = () => {
 
     const { createUser, googleSign, githubSign } = useContext(AuthContext)
+    
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/'; 
+
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -35,6 +43,7 @@ const Signup = () => {
                 });
 
                 form.reset();
+                navigate(from, {replace: true});
             })
             .catch((error) => {
                 console.log(error);
@@ -46,6 +55,7 @@ const Signup = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, {replace: true});
             }).catch((error) => {
                 console.log(error);
             });
@@ -57,6 +67,7 @@ const Signup = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, {replace: true});
             }).catch((error) => {
                 console.log(error);
             });

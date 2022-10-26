@@ -1,9 +1,14 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 
 const Signin = () => {
     const { loginUser, googleSign, githubSign } = useContext(AuthContext)
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/'; 
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -19,6 +24,7 @@ const Signin = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                navigate(from, {replace: true});
             })
             .catch((error) => {
                 console.log(error);
@@ -31,6 +37,7 @@ const Signin = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, {replace: true});
             }).catch((error) => {
                 console.log(error);
             });
@@ -42,6 +49,7 @@ const Signin = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
+                navigate(from, {replace: true});
             }).catch((error) => {
                 console.log(error);
             });
