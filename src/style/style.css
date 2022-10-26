@@ -351,6 +351,11 @@ body {
     position: relative;
     height: 410px;
     border: 2px solid #ffffff;
+    transition: .5s;
+}
+
+.course-card:hover{
+    box-shadow: 2px 0px 10px 2px rgba(168, 169, 219, 0.4);
 }
 
 .course-card .course-thumbnail {
@@ -359,6 +364,11 @@ body {
     object-fit: cover;
     border-radius: 3px 3px 0px 0px;
     margin-bottom: 10px;
+    transition: .5s;
+}
+
+.course-card:hover .course-thumbnail{
+    transform: scale(1.02);
 }
 
 .course-card .author-info {
@@ -434,4 +444,13 @@ body {
 .course-card .course-type-duration {
     font-size: .9rem;
     color: var(--text-gary);
+}
+
+
+/* ============ Footer ============ */
+.footer{
+    background: #FFF0EE;
+    margin-top: 50px;
+    text-align: center;
+    padding: 50px;
 }
