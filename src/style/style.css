@@ -8,6 +8,7 @@
     --background-dark-500: #3C3B56;
     --text-dark: #2e2f3a;
     --text-light: #EFF7FF;
+    --text-gary: #888888;
     --gray-light: #d3cece;
     --dark-100: rgba(0, 0, 0, 0.2);
     --button: linear-gradient(0deg, #FC7583, #e25967);
@@ -39,6 +40,7 @@ body {
     padding: 10px 20px;
     position: relative;
     border-bottom: 1px solid rgba(168, 169, 219, 0.1);
+    margin-bottom: 30px;
 }
 
 .navigation::before {
@@ -151,7 +153,7 @@ body {
     border-color: transparent transparent #dae1e9 transparent;
 }
 
-.top-navigation .right-panel .navigation-login{
+.top-navigation .right-panel .navigation-login {
     padding: 8px 20px;
     background: var(--button);
     cursor: pointer;
@@ -193,7 +195,7 @@ body {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
-    
+
     gap: 15px;
 }
 
@@ -212,7 +214,7 @@ body {
     border: 1px solid var(--primary);
 }
 
-.sign-account .action-button .sign-to-account{
+.sign-account .action-button .sign-to-account {
     margin-top: 30px;
     padding: 8px;
     background: var(--button);
@@ -227,16 +229,16 @@ body {
     transition: .5s;
 }
 
-.sign-account .action-button .sign-to-account:hover{
+.sign-account .action-button .sign-to-account:hover {
     background: transparent;
     border: 2px solid var(--primary);
     color: var(--primary-700);
     font-weight: 600;
 }
 
-.sign-account .other-options .or-title{
+.sign-account .other-options .or-title {
     position: relative;
-    
+
     text-align: center;
     margin: 20px 0;
     color: var(--gray-light);
@@ -245,7 +247,7 @@ body {
 }
 
 .sign-account .other-options .or-title::before,
-.sign-account .other-options .or-title::after{
+.sign-account .other-options .or-title::after {
     content: '';
     position: absolute;
     height: .5px;
@@ -255,25 +257,23 @@ body {
     transform: translateY(-50%);
 }
 
-.sign-account .other-options .or-title::before{
+.sign-account .other-options .or-title::before {
     left: 0;
 }
 
-.sign-account .other-options .or-title::after{
+.sign-account .other-options .or-title::after {
     right: 0;
 }
 
-.sign-account .other-options .google-github{
+.sign-account .other-options .google-github {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    
+
 }
 
-
-
 .sign-account .other-options .google-github .google-sign,
-.sign-account .other-options .google-github .github-sign{
+.sign-account .other-options .google-github .github-sign {
     padding: 8px;
     width: 100%;
     background: transparent;
@@ -293,26 +293,26 @@ body {
 }
 
 .sign-account .other-options .google-github .google-sign:hover,
-.sign-account .other-options .google-github .github-sign:hover{
+.sign-account .other-options .google-github .github-sign:hover {
     background: var(--button);
     color: var(--text-light);
     font-weight: 500;
 }
 
 .sign-account .other-options .google-github .google-sign img,
-.sign-account .other-options .google-github .github-sign img{
+.sign-account .other-options .google-github .github-sign img {
     width: 20px;
 }
 
-.remember-forget{
+.remember-forget {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 10px;
-    
+
 }
 
-.remember-forget .remember-me{
+.remember-forget .remember-me {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -320,11 +320,118 @@ body {
     cursor: pointer;
 }
 
-.remember-forget .remember-me input{
+.remember-forget .remember-me input {
     accent-color: var(--primary-700);
 }
 
-.remember-forget .forget-password{
+.remember-forget .forget-password {
     color: var(--primary);
     font-weight: 500;
+}
+
+
+
+/* .courses{
+    display: flex;
+    justify-content: space-between;
+} */
+
+
+/* ============ Course ============ */
+.all-courses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.course-card {
+    padding: 15px;
+    background: #fdfbfb;
+    border-radius: 6px;
+    position: relative;
+    height: 410px;
+    border: 2px solid #ffffff;
+}
+
+.course-card .course-thumbnail {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 3px 3px 0px 0px;
+    margin-bottom: 10px;
+}
+
+.course-card .author-info {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.course-card .author-info .author-img {
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.course-card .author-info .author-name {
+    font-size: 1rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.course-card .course-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin: 5px 0;
+}
+
+.course-card .skills-gain {
+    color: var(--text-gary);
+    font-size: .9rem;
+}
+
+.course-card .skills-gain .all-skill-name{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5px;
+}
+
+.course-card .skills-gain span {
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-right: 10px;
+}
+
+.course-card .course-card-footer {
+    position: absolute;
+    bottom: 15px;
+}
+
+.course-card .ratings {
+    display: flex;
+    align-items: center;
+}
+
+.course-card .ratings .star {
+    width: 15px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.course-card .ratings .rating {
+    font-size: .9rem;
+    margin-right: 5px;
+    color: var(--text-gary);
+}
+
+.course-card .ratings .reviews {
+    font-size: .9rem;
+    color: var(--text-gary);
+}
+
+.course-card .course-type-duration {
+    font-size: .9rem;
+    color: var(--text-gary);
 }

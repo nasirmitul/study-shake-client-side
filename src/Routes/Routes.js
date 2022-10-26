@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../components/Blogs/Blog";
+import Course from "../components/Courses/Course";
+import CourseDetails from "../components/Courses/CourseDetails";
 import Courses from "../components/Courses/Courses";
 import FAQ from "../components/FAQ/FAQ";
 import ForgetPass from "../components/Forget/ForgetPass";
@@ -17,6 +19,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
+
                 loader: async () => {
                     return fetch('http://localhost:5000/courses')
                 }
@@ -34,6 +37,10 @@ export const routes = createBrowserRouter([
                 loader: async () => {
                     return fetch('http://localhost:5000/courses')
                 }
+            },
+            {
+                path: '/courses/course/:course_id',
+                element: <CourseDetails></CourseDetails>
             },
             {
                 path: '/faq',
