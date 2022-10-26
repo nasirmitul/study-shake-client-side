@@ -46,9 +46,9 @@ body {
 .navigation::before {
     content: '';
     position: absolute;
-    left: 35px;
+    left: 15px;
     top: 0;
-    width: calc(100% - 70px);
+    width: calc(100% - 30px);
     margin: auto;
     /* background: red; */
     z-index: -1;
@@ -453,4 +453,38 @@ body {
     margin-top: 50px;
     text-align: center;
     padding: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.course img{
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
 }
