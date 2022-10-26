@@ -6,6 +6,7 @@ import level from '../../images/diagram.png'
 import time from '../../images/time.png'
 import prerequisite from '../../images/task.png'
 
+import jsPDF from 'jspdf';
 
 import {
     Accordion,
@@ -18,17 +19,30 @@ import {
 
 const CourseDetails = () => {
     const courseData = useLoaderData();
-    console.log(courseData);
-    
+    // console.log(courseData);
+
     const { course_id, title, short_description, about, thumbnail, authorImage, authorName, skills, student, rating, reviews, courseType, courseDuration, prerequisites, syllabus
     } = courseData || {};
+
+    const generatePdf = () => {
+        const doc = new jsPDF('p', 'pt', 'a4')
+
+        doc.html(document.querySelector("#course-detail"), {
+            callback: function (pdf) {
+                pdf.save(`${title}.pdf`);
+            }
+        })
+
+    }
+
+
     return (
-        <div className='course-detail'>
+        <div className='course-detail' id='course-detail'>
             <div className="header">
                 <div className="title-section">
                     <h3 className='course-title'>Learn {title}</h3>
 
-                    <button className='to-pdf my-button'>Download as PDF</button>
+                    <button className='to-pdf my-button' onClick={generatePdf}>Download as PDF</button>
                 </div>
                 <div className="short-description">
                     <p className='course-description'>{short_description}</p>
@@ -49,7 +63,7 @@ const CourseDetails = () => {
                     <Link to={`/courses/course/checkout/${course_id}`}>
                         <button className="get-access my-button">Get Premium Access</button>
                     </Link>
-                    
+
                     <div className="enrolled">
                         <img src={avatars} alt="" />
                         <p><span>{student}</span> learners enrolled</p>
@@ -127,7 +141,7 @@ const CourseDetails = () => {
             <Link to={`/courses/course/checkout/${course_id}`}>
                 <button className="get-access-bottom my-button">Get Premium Access</button>
             </Link>
-            
+
         </div >
     );
 };

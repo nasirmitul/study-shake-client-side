@@ -661,7 +661,7 @@ body {
     margin-bottom: 20px;
 }
 
-.course-detail .course-syllabus .accordion-item {
+.accordion-item {
     cursor: pointer;
     border: 1px solid var(--text-gary);
     margin-bottom: 3px;
@@ -669,30 +669,30 @@ body {
     border-radius: 3px;
 }
 
-.course-detail .course-syllabus .accordion-button {
+.accordion-button {
     display: flex;
     gap: 15px;
 }
 
-.course-detail .course-syllabus .accordion-button .lesson-no {
+.accordion-button .lesson-no {
     font-size: 2rem;
     color: var(--primary);
     margin-top: -5px;
 }
 
-.course-detail .course-syllabus .accordion-button .lesson-title {
+.accordion-button .lesson-title {
     font-size: 1.1rem;
     color: var(--text-dark);
     font-weight: 600;
 }
 
-.course-detail .course-syllabus .accordion-button .lesson-data {
+.accordion-button .lesson-data {
     font-size: .9rem;
     color: var(--text-dark);
     font-weight: 400;
 }
 
-.course-detail .course-syllabus .accordion-item-panel {
+.accordion-item-panel {
     border-top: 1px solid var(--text-gary);
     margin-top: 20px;
 }
@@ -705,12 +705,12 @@ body {
 }
 
 /* ============ Course Page Side Navigation ============ */
-.course-layout{
+.course-layout {
     display: flex;
     gap: 50px;
 }
 
-.course-navigation{
+.course-navigation {
     position: sticky;
     top: 10px;
     min-width: 250px;
@@ -720,13 +720,13 @@ body {
     height: fit-content;
 }
 
-.course-navigations{
+.course-navigations {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.course-navigations .course-title{
+.course-navigations .course-title {
     background: var(--white-50);
     padding: 8px 12px;
     border-radius: 3px;
