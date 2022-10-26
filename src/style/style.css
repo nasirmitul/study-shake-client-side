@@ -478,7 +478,7 @@ body {
 
 
 /* ============ Course Details Page ============ */
-.course-detail{
+.course-detail {
     width: min(900px, 90%);
     margin: auto;
 }
@@ -488,7 +488,7 @@ body {
     border-radius: 10px;
     padding: 30px;
     margin-bottom: 30px;
-    
+
 }
 
 .course-detail .header .title-section {
@@ -577,7 +577,7 @@ body {
     font-size: 1.1rem;
 }
 
-.course-detail .course-infos{
+.course-detail .course-infos {
     background: var(--white-50);
     border: 2px solid var(--white);
     padding: 30px;
@@ -590,32 +590,33 @@ body {
 
 .course-detail .course-infos .level,
 .course-detail .course-infos .time,
-.course-detail .course-infos .Prerequisites{
+.course-detail .course-infos .Prerequisites {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.course-detail .course-infos img{
+.course-detail .course-infos img {
     width: 35px;
 }
 
-.course-detail .course-infos .course-info-title{
+.course-detail .course-infos .course-info-title {
     font-size: .9rem;
-    color:var(--text-dark-100);
+    color: var(--text-dark-100);
 }
 
-.course-detail .course-infos .course-info-data{
+.course-detail .course-infos .course-info-data {
     font-size: 1.2rem;
     font-weight: 500;
     color: var(--text-dark);
 }
 
-.course-detail .about-course-part .about-course{
+.course-detail .about-course-part .about-course {
     margin-bottom: 20px;
 }
+
 .course-detail .about-course-part .about-course-title,
-.course-detail .about-course-part .skill-gain-title{
+.course-detail .about-course-part .skill-gain-title {
     font-size: 1.2rem;
     font-weight: 500;
     margin-bottom: 5px;
@@ -623,44 +624,44 @@ body {
 }
 
 .course-detail .about-course-part .about-course-info,
-.course-detail .about-course-part .skill-gain-info{
+.course-detail .about-course-part .skill-gain-info {
     font-size: .9rem;
     font-weight: 400;
     color: var(--text-dark);
 }
 
-.course-detail .about-course-part .skill-gain-info{
+.course-detail .about-course-part .skill-gain-info {
     margin: 0 0 30px 30px;
 }
 
-.course-detail .course-thumbnail img{
+.course-detail .course-thumbnail img {
     width: 100%;
     height: 320px;
     object-fit: cover;
     margin-bottom: 30px;
 }
 
-.course-detail .course-syllabus { 
+.course-detail .course-syllabus {
     background: var(--white-50);
     padding: 30px;
     border-radius: 10px;
     border: 2px solid var(--white);
 }
 
-.course-detail .course-syllabus .syllabus-title h3{
+.course-detail .course-syllabus .syllabus-title h3 {
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--text-dark);
 }
 
-.course-detail .course-syllabus .syllabus-title p{
+.course-detail .course-syllabus .syllabus-title p {
     font-size: .9rem;
     font-weight: 400;
     color: var(--text-dark-100);
     margin-bottom: 20px;
 }
 
-.course-detail .course-syllabus .accordion-item{
+.course-detail .course-syllabus .accordion-item {
     cursor: pointer;
     border: 1px solid var(--text-gary);
     margin-bottom: 3px;
@@ -668,35 +669,35 @@ body {
     border-radius: 3px;
 }
 
-.course-detail .course-syllabus .accordion-button{
+.course-detail .course-syllabus .accordion-button {
     display: flex;
     gap: 15px;
 }
 
-.course-detail .course-syllabus .accordion-button .lesson-no{
+.course-detail .course-syllabus .accordion-button .lesson-no {
     font-size: 2rem;
     color: var(--primary);
     margin-top: -5px;
 }
 
-.course-detail .course-syllabus .accordion-button .lesson-title{
+.course-detail .course-syllabus .accordion-button .lesson-title {
     font-size: 1.1rem;
     color: var(--text-dark);
     font-weight: 600;
 }
 
-.course-detail .course-syllabus .accordion-button .lesson-data{
+.course-detail .course-syllabus .accordion-button .lesson-data {
     font-size: .9rem;
     color: var(--text-dark);
     font-weight: 400;
 }
 
-.course-detail .course-syllabus .accordion-item-panel { 
+.course-detail .course-syllabus .accordion-item-panel {
     border-top: 1px solid var(--text-gary);
     margin-top: 20px;
 }
 
-.course-detail .get-access-bottom{
+.course-detail .get-access-bottom {
     margin-top: 30px;
     position: relative;
     left: 50%;
@@ -705,6 +706,41 @@ body {
 
 
 
+
+/* ============ Error ============ */
+.error {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error h1 {
+    font-size: 15rem;
+    line-height: 230px;
+    background-image: url(../images/nature.jpg);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    font-weight: 800;
+    -webkit-font-smoothing: antialiased;
+}
+
+.error h3{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.error p{
+    font-size: .9rem;
+    color: var(--text-dark-100);
+    margin-bottom: 50px;
+}
 
 /* ============ Footer ============ */
 .footer {
