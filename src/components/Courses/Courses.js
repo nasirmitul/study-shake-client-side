@@ -7,7 +7,7 @@ const Courses = () => {
     // console.log(courses);
     
     return (
-        <div className='courses'>            
+        <div className='courses courses-page'>            
             <div className="all-courses">
                 {
                     courses.map(course => <Course

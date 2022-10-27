@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../images/logo.png'
-import man from '../../images/man.jpg'
 
 import sun from '../../images/sun.png'
 import moon from '../../images/moon.png'
@@ -11,6 +10,7 @@ import { AuthContext } from '../../contexts/UserContext';
 const Navigation = () => {
     const [dark, setDark] = useState(false);
     const [showName, setShowName] = useState(false);
+    const [hamburger, setHamburger] = useState(false)
 
     const { user } = useContext(AuthContext)
 
@@ -24,14 +24,14 @@ const Navigation = () => {
                     </NavLink>
                 </div>
 
-                <div className="links">
+                <div onClick={() => setHamburger(false)} className={`links ${hamburger ? 'active' : 'not-active'}`}>
                     <NavLink to='/home'>Home</NavLink>
                     <NavLink to='/courses'>Courses</NavLink>
                     <NavLink to='/faq'>FAQ</NavLink>
                     <NavLink to='/blog'>blog</NavLink>
                 </div>
 
-                <div className="right-panel">
+                <div onClick={() => setHamburger(false)} className={`right-panel ${hamburger ? 'active' : 'not-active'}`}>
                     <div className="theme-change" onClick={() => setDark(!dark)}>
                         {
                             dark ? <img src={sun} alt="" /> : <img src={moon} alt="" />
@@ -55,7 +55,15 @@ const Navigation = () => {
                         }
                     </div>
 
+
                 </div>
+
+                <div className="hamburger-icon" onClick={() => setHamburger(!hamburger)}>
+                    <div className="line line-one"></div>
+                    <div className="line line-two"></div>
+                    <div className="line line-three"></div>
+                </div>
+
             </nav>
         </div>
     );

@@ -1,8 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 
 const Signin = () => {
+
+    const [showError, setShowError] = useState("");
     const { loginUser, googleSign, githubSign } = useContext(AuthContext)
 
     const navigate = useNavigate();
@@ -28,6 +30,15 @@ const Signin = () => {
             })
             .catch((error) => {
                 console.log(error);
+                if(error.message === "Firebase: Error (auth/user-not-found).")
+                {
+                    setShowError('User Not found. Please Create your account.');
+                }
+
+                if(error.message === "Firebase: Error (auth/wrong-password).")
+                {
+                    setShowError('Wrong Password. Please Try Again.');
+                }
             })
     }
 
@@ -65,6 +76,7 @@ const Signin = () => {
                     <input type="email" placeholder='Enter Your Email' name='email' required />
                     <input type="password" placeholder='Type Password' name='password' required />
                 </div>
+                <p style={{color: 'red'}}>{showError}</p>
 
                 <div className="remember-forget">
                     <div className="remember-me">

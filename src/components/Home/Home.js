@@ -1,5 +1,5 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
 import man from '../../images/manwithlaptop.png'
 
 import programming from '../../images/programming_icon.png'
@@ -10,9 +10,14 @@ import heart from '../../images/heart.png'
 import growth from '../../images/growth.png'
 import thunder from '../../images/thunder.png'
 
+import { AuthContext } from '../../contexts/UserContext';
+
 
 
 const Home = () => {
+
+    const {user} = useContext(AuthContext);
+    // console.log(user.email);
 
     const courses = useLoaderData();
     console.log(courses);
@@ -20,15 +25,15 @@ const Home = () => {
         <div className='container home'>
             <div className="home-header">
                 <div className="header-title">
-                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, in.</h1>
+                    <h1>Start Learning from best <span>Platform</span> with best <span>Instructors</span></h1>
                 </div>
                 <div className="header-description">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate natus saepe recusandae debitis qui aliquam facere reiciendis totam alias inventore!</p>
+                    <p>Receive new course material in future update automatically in your inbox by joining this course.</p>
                 </div>
 
                 <div className="action-buttons">
-                    <button className="my-button">Check Courses</button>
-                    <button className="my-button-second">Check Blog</button>
+                    <Link to='/courses'><button className="my-button">Check Courses</button></Link>
+                    <Link to='/blog'><button className="my-button-second">Check Blog</button></Link>
                 </div>
 
                 <div className="header-image">
@@ -67,9 +72,15 @@ const Home = () => {
                 <h2 className='connect-title'>Connect with us and get the best programming course we offer</h2>
                 <p className='connect-description'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, magni.</p>
 
-                <button className="my-button">
+                <div>
+                    {
+                        user ? <Link to='/courses'><button className="my-button">
+                        Get Connected
+                    </button></Link> : <Link to='/login'><button className="my-button">
                     Get Connected
-                </button>
+                </button></Link>
+                    }
+                </div>
             </div>
         </div>
     );

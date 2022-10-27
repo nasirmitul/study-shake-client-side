@@ -14,7 +14,7 @@ const Profile = () => {
     return (
         <div className='container'>
             <h1>This is profile</h1>
-            <button onClick={handleLogOut}>Logout</button>
+            <button className='my-button' onClick={handleLogOut}>Logout</button>
         </div>
     );
 };

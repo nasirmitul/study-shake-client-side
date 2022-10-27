@@ -1,5 +1,5 @@
 import { getAuth, updateProfile } from 'firebase/auth';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 import app from '../../firebase/firebase.init';
@@ -9,15 +9,16 @@ import github from '../../images/github.png'
 
 const auth = getAuth(app)
 const Signup = () => {
+    const [showError, setShowError] = useState("");
 
     const { createUser, googleSign, githubSign } = useContext(AuthContext)
+
+    
     
     const navigate = useNavigate();
     const location = useLocation();
 
     const from = location.state?.from?.pathname || '/'; 
-
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -34,6 +35,7 @@ const Signup = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+
                 updateProfile(auth.currentUser, {
                     displayName: name, photoURL: image
                 }).then(() => {
@@ -47,6 +49,15 @@ const Signup = () => {
             })
             .catch((error) => {
                 console.log(error);
+                if(error.message === "Firebase: Password should be at least 6 characters (auth/weak-password).")
+                {
+                    setShowError('Password should be min 6 character long');
+                }
+
+                if(error.message === "Firebase: Error (auth/email-already-in-use).")
+                {
+                    setShowError('This Email Already in use. Please use another one');
+                }
             })
     }
 
@@ -84,6 +95,8 @@ const Signup = () => {
                     <input type="email" placeholder='Enter Your Email' name='email' required />
                     <input type="password" placeholder='Type Password' name='password' required />
                     <input type="text" placeholder='Your Image URL' name='image' required />
+
+                    <p style={{color: 'red', marginTop: '-10px'}}>{showError}</p>
                 </div>
 
                 <div className="action-button">
