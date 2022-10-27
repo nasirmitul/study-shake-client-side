@@ -1,7 +1,10 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/UserContext';
 
 const Profile = () => {
+    const navigate = useNavigate();
+
     const { logoutUser } = useContext(AuthContext);
 
     const handleLogOut = () => {

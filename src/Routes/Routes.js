@@ -24,14 +24,14 @@ export const routes = createBrowserRouter([
                 element: <Home></Home>,
 
                 loader: async () => {
-                    return fetch('http://localhost:5000/courses')
+                    return fetch('https://studyshake-server-side.vercel.app/courses')
                 }
             },
             {
                 path: '/home',
                 element: <Home></Home>,
                 loader: async () => {
-                    return fetch('http://localhost:5000/courses')
+                    return fetch('https://studyshake-server-side.vercel.app/courses')
                 }
             },
             {
@@ -42,21 +42,21 @@ export const routes = createBrowserRouter([
                         path: '/courses',
                         element: <Courses></Courses>,
                         loader: async () => {
-                            return fetch('http://localhost:5000/courses')
+                            return fetch('https://studyshake-server-side.vercel.app/courses')
                         }
                     },
                     {
                         path: '/courses/course/:course_id',
                         element: <CourseDetails></CourseDetails>,
                         loader: async ({ params }) => {
-                            return fetch(`http://localhost:5000/courses/course/${params.course_id}`)
+                            return fetch(`https://studyshake-server-side.vercel.app/courses/course/${params.course_id}`)
                         }
                     },
                     {
                         path: '/courses/course/checkout/:checkout_id',
                         element: <PrivateRoute><Checkout></Checkout></PrivateRoute>,
                         loader: async ({ params }) => {
-                            return fetch(`http://localhost:5000/courses/course/checkout/${params.checkout_id}`)
+                            return fetch(`https://studyshake-server-side.vercel.app/courses/course/checkout/${params.checkout_id}`)
                         }
                     }
                 ]

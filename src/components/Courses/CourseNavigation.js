@@ -6,7 +6,7 @@ const CourseNavigation = () => {
     const [courseData, setCourseData] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/courses')
+        fetch('https://studyshake-server-side.vercel.app/courses')
             .then(res => res.json())
             .then(data => setCourseData(data))
     }, [])

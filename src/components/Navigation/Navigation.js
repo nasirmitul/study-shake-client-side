@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../images/logo.png'
 
-import sun from '../../images/sun.png'
+import sun from '../../images/sunBlack.png'
 import moon from '../../images/moon.png'
 import { AuthContext } from '../../contexts/UserContext';
 
