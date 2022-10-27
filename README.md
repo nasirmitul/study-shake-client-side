@@ -11,4 +11,4 @@
 * Used firebase for authentication, here you can create your account through email and password, google and github also.
 
 #### Technologies Used
-`react js`, `node js`, `express js`, `Firebase`, `Vercel`, `Vs Code`
+`react js` `node js` `express js` `Firebase` `Vercel` `Vs Code`
